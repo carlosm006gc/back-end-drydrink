@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie-edge">
+<title>Dry Drink</title>
+<script type="module"
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="body-cad">
+	<header>
+		<ul class="nav-links">
+			<li><a href=""></a></li>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="distribuidoras.html">DISTRIBUIDORAS</a></li>
+			<li><a href="sobre.html">SOBRE</a></li>
+			<li><a href=""></a></li>
+
+			<li>
+				<div id="divBusca">
+					<input type="text" id="txtBusca" placeholder="pesquisar" /> <img
+						src="imgs/lupa.svg" id="btnBusca" alt="Buscar" />
+			</li>
+			<ul class="box">
+				<li class="icon carrinho"><a class="link" href=""> <ion-icon
+							name="cart-outline"></ion-icon>
+				</a></li>
+				<li class="icon loginn"><a class="link" href=""> <ion-icon
+							name="log-out-outline"></ion-icon>
+				</a></li>
+				<li class="icon instagram"><a class="link" href=""> <ion-icon
+							name="logo-instagram"></ion-icon>
+				</a></li>
+				<li class="icon facebook"><a class="link" href=""> <ion-icon
+							name="logo-facebook"></ion-icon>
+				</a></li>
+				<li class="icon linkedin"><a class="link" href=""> <ion-icon
+							name="logo-linkedin"></ion-icon>
+				</a></li>
+				<li class="icon twitter"><a class="link" href=""> <ion-icon
+							name="logo-twitter"></ion-icon>
+				</a></li>
+			</ul>
+			<li></li>
+
+		</ul>
+
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+		</nav>
+	</header>
+	<section id="section-cad">
+		<div id="div-control-cad">
+			<div class="img-cadastro">
+				<img src="imgs/img-sobre2.jpeg" alt="etica">
+			</div>
+			<div class="login-cad">
+				<h1 class="h1-login">Cadastrar</h1>
+				<form id="form-cad" method="POST" action="/salvar"
+					th:object="${cliente}">
+					<label class="label-cd" for="nome">Nome<input
+						class="input-cad" type="text" name="nome" th:field="*{nome}"
+						maxlength="30"></label> <label class="label-cd" for="telefone">Telefone<input
+						class="input-cad" type="text" name="telefone"
+						th:field="*{telefone}" maxlength="30"></label> <label
+						class="label-cd" for="email">Email<input class="input-cad"
+						type="email" name="email" th:field="*{email}" maxlength="40"></label>
+					<label class="label-cd" for="senha">Senha<input
+						class="input-cad" type="password" name="senha" th:field="*{senha}"
+						maxlength="15"></label>
+					<button id="btnCadastrar" type="submit">Cadastrar</button>
+					<a id="a-login" href="login.html">Ja possui cadastro? Faça seu
+						login! </a>
+
+				</form>
+			</div>
+		</div>
+	</section>
+	<script src="js/func.js"></script>
+</body>
+</html>

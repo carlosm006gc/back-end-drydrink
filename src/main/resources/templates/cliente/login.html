@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie-edge">
+<title>Dry Drink</title>
+<script type="module"
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+</head>
+<body>
+	<header>
+		<ul class="nav-links">
+			<li><a href=""></a></li>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="distribuidoras.html">DISTRIBUIDORAS</a></li>
+			<li><a href="sobre.html">SOBRE</a></li>
+			<li><a href=""></a></li>
+
+			<li>
+				<div id="divBusca">
+					<input type="text" id="txtBusca" placeholder="pesquisar" /> <img
+						src="imgs/lupa.svg" id="btnBusca" alt="Buscar" />
+			</li>
+			<ul class="box">
+				<li class="icon carrinho"><a class="link" href=""> <ion-icon
+							name="cart-outline"></ion-icon>
+				</a></li>
+				<li class="icon loginn"><a class="link" href=""> <ion-icon
+							name="log-out-outline"></ion-icon>
+				</a></li>
+				<li class="icon instagram"><a class="link" href=""> <ion-icon
+							name="logo-instagram"></ion-icon>
+				</a></li>
+				<li class="icon facebook"><a class="link" href=""> <ion-icon
+							name="logo-facebook"></ion-icon>
+				</a></li>
+				<li class="icon linkedin"><a class="link" href=""> <ion-icon
+							name="logo-linkedin"></ion-icon>
+				</a></li>
+				<li class="icon twitter"><a class="link" href=""> <ion-icon
+							name="logo-twitter"></ion-icon>
+				</a></li>
+			</ul>
+			<li></li>
+
+		</ul>
+
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+		</nav>
+	</header>
+	<div class="login">
+		<h1 class="h1-login">Entrar</h1>
+		<form method="POST" action="/loginClientes">
+			<label class="label-cd">Email<input type="email" name="email"
+				maxlength="40"></label> <label class="label-cd">Senha<input
+				type="password" name="senha" maxlength="15"></label>
+			<button id="btnCadastrar" type="submit">Entrar</button>
+		</form>
+		</form>
+		<a id="a-login" href="cadastrar.html">Ainda não é inscrito?
+			Cadastre-se!</a>
+	</div>
+	<script src="func.js"></script>
+</body>
+</html>

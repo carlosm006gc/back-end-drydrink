@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie-edge">
+<title>Dry Drink</title>
+<script type="module"
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<ul class="nav-links">
+			<li><a href=""></a></li>
+			<li><a href="index.html">LISTAS</a></li>
+			<li><a href="distribuidoras.html">CADASTROS</a></li>			
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</header>
+
+	<section id="section-list">
+		<nav id="nav-list">
+			<div id="div-cad-list">
+				<ul class="list-f-ul">
+					<li class="list-f-ul"><i></i> <span class="span-list-f">Lista
+							de Cidades</span></li>
+				</ul>
+				<a th:href="@{/cadastrarCidade}" role="button"> <span
+					title="Cadastrar" aria-hidden="true"></span> <span
+					class="span-list-f" id="span-cad-list">Cadastrar Cidade</span>
+				</a>
+			</div>
+		</nav>
+
+		<div>
+		<div id="div-control-list">
+				<table id="tr-table-list">
+					<thead id="tr-thead-list">
+						<tr class="th-list-func">
+							<th>#</th>
+							<th>Cidade</th>
+							<th>Estado</th>
+							<th>Sigla</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+					<tbody id="tbody-list">
+						<tr class="th-list-func" th:each="cidade : ${listaCidade}">
+							<td th:text="${cidade.id}"></td>
+							<td th:text="${cidade.nome}"></td>
+							<td th:text="${cidade.estado.nome}"></td>
+							<td th:text="${cidade.estado.sigla}"></td>
+
+							<td class="icon-lista"><a class="editar"
+								th:href="@{/editar/{id}(id=${funcionario.id})}" role="button">
+									<ion-icon name="pencil-outline"></ion-icon> <span
+									title="Editar" aria-hidden="true"></span>
+
+							</a> <a class="excluir"
+								th:href="@{/remover/{id}(id=${funcionario.id})}" role="button">
+									<ion-icon name="close-outline"></ion-icon> <span
+									title="Remover" aria-hidden="true"></span>
+
+							</a>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+</html>

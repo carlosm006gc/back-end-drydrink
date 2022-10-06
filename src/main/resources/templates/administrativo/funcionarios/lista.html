@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie-edge">
+<title>Dry Drink</title>
+<script type="module"
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+	src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<ul class="nav-links">
+			<li><a href=""></a></li>
+			<li><a href="index.html">LISTAS</a></li>
+			<li><a href="distribuidoras.html">CADASTROS</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</header>
+
+	<section id="section-list">
+		<nav id="nav-list">
+			<div id="div-cad-list">
+				<ul class="list-f-ul">
+					<li class="list-f-ul"><i></i> <span class="span-list-f">Lista
+							de Funcionários</span></li>
+				</ul>
+				<a th:href="@{/cadastrarFuncionario}" role="button"> <span
+					title="Cadastrar" aria-hidden="true"></span> <span
+					class="span-list-f" id="span-cad-list">Cadastrar Funcionário</span>
+				</a>
+			</div>
+		</nav>
+		<div>
+			<div id="div-control-list">
+				<table id="tr-table-list">
+					<thead id="tr-thead-list">
+						<tr class="th-list-func" id="tr-list-func">
+							<th>#</th>
+							<th>Nome</th>
+							<th>Cargo</th>
+							<th>Salário Bruto</th>
+							<th>Cidade</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+					<tbody id="tbody-list">
+						<tr class="th-list-func"
+							th:each="funcionario :${listaFuncionario}">
+							<td th:text="${funcionario.id}"></td>
+							<td th:text="${funcionario.nome}"></td>
+							<td th:text="${funcionario.cargo}"></td>
+							<td th:text="${funcionario.salarioBruto}"></td>
+							<td th:text="${funcionario.cidade}"></td>
+
+							<td class="icon-lista"><a class="editar"
+								th:field="*{id}" th:href="@{/editar/{id}(id=${funcionario.id})}" role="button">
+									<ion-icon name="pencil-outline"></ion-icon> <span
+									title="Editar" aria-hidden="true"></span>
+
+							</a> <a class="excluir"
+								th:href="@{/remover/{id}(id=${funcionario.id})}" role="button">
+									<ion-icon name="close-outline"></ion-icon> <span
+									title="Remover" aria-hidden="true"></span>
+
+							</a>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+</html>

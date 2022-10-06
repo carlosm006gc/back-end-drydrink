@@ -1,0 +1,1282 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  } 
+header{
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+    background-color: #111111;
+    align-items: center;
+    font-family: 'oswald', sans-serif;
+    top: 0;
+} 
+  .links{
+    height: 150px;
+  }
+  .nav-links {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+    
+  }
+  .nav-links li {
+    list-style: none;    
+    display: flex;
+    align-items: center;
+    transition: all 0.8s ease;
+
+  }
+
+  .nav-links a {
+    letter-spacing: 1px;
+    margin: 0px 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: solid; 
+
+}
+ .icon a{
+    font-size: 25px;
+ }
+ 
+ .box{
+    width: auto;
+    height: 100%;
+    display: flex;
+    padding-left: 30px;
+    margin: auto;
+ }
+ .box .icon{
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+ }
+ .instagram{
+  margin-left: 40%;
+ }
+ .link:hover{
+    color: #FF6B1A;
+    cursor: pointer;
+ }
+ 
+
+ul li a:hover{
+    transition: all 0.5s ease;
+    text-decoration: underline #FF6B1A;
+}
+#divBusca{
+  background-color:transparent;
+  border:solid 3px;
+  border-color: #ffffff;
+  border-radius:15px;
+  width:100px;
+  display: flex;
+  margin: 20px;
+}
+
+#txtBusca{
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none 5px;
+  border-radius: 15px;
+  height:30px;
+  width:94px;
+}
+#divBusca img{
+  margin: 5px;
+  align-items: center;
+  width: 25px;
+}
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #FF6B1A;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  @media screen and (max-width:850px) {
+    
+    .nav-links li {
+        padding: 10px 0px;
+      } 
+    .nav-links{
+      position: fixed;
+      right: 0px;
+      height: 92vh;
+      top: 16vh;
+      background-color: #111111;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateX(100%);
+    }
+    .instagram{
+      margin-left: 20%;
+     }
+    
+    .box{
+        width: auto;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        padding: 1px;
+        cursor: pointer;
+        margin: 0px 5%; 
+
+     }
+     .box .iconc{
+      padding: 1px;
+      width: 20%;
+      height: 10%;
+      display: flex;
+      justify-content: left;
+      
+   } 
+   
+    .nav-links li {
+      opacity: 0;
+    }
+
+    .burger {
+      display: block;
+      position: absolute;
+      left: 5vh;
+      top: 35%;
+    }
+   header{
+    height: 100px;
+   }
+   .links{
+    height: 100px;
+
+   }
+  }
+  @media screen and (max-width:350px) {
+    .box{
+      width: 90vw;
+    }
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  @media screen and (max-width: 830px) {
+    .nav-links.nav-active li {
+      opacity: 1;
+      
+    }
+  }
+  
+  #main{
+    top: 150px;
+    width: 100%;
+    height: 130vh;
+    position: relative;
+    font-family: 'oswald', sans-serif;
+
+  }
+  
+.slider{
+  height: 100%;
+  width: 100%;
+}
+.slider li {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.slider img {
+  height: 100%;
+  width: 100%;
+  vertical-align: left;
+  transition: 0.5s ease;
+  object-fit: cover;
+}
+.slider label {
+  background-color: rgba(255, 255, 255, 0.712);
+  cursor: pointer;
+  height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  z-index: 10;
+  position: absolute;
+  bottom: 5vh;
+}
+label:hover{
+  background-color: white;
+  transition: all 1s ease;
+}
+.slider input {
+  display: none;
+  
+}
+.slider li:nth-child(1) label {
+  left: 48%;
+}
+
+.slider li:nth-child(2) label {
+  left: 50%;
+}
+.slider img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+@media screen and (max-width: 850px){
+  #main{
+    top: 100px;
+    height: 80vh;
+    font-family: 'oswald', sans-serif;
+
+  }
+  .slider img{
+    object-position: bottom;
+    object-fit: cover;
+  }
+  .slider label {
+    height: 12px;
+    width: 12px;
+  }
+  .icon a{
+    font-size: 20px;
+ }
+}
+@media screen and (max-width: 700px){
+  
+  .slider label {
+    height: 10px;
+    width: 10px;
+  }
+  #main{
+    height: 60vh;
+  }
+  
+  .slider li:nth-child(1) label {
+    left: 47%;
+  }
+  
+  .slider li:nth-child(2) label {
+    left: 51%;
+  }
+}
+@media screen and (max-width: 455px){
+  
+  #main{
+    height: 40vh;
+  }
+  .slider li:nth-child(1) label {
+    left: 47%;
+  }
+  
+  .slider li:nth-child(2) label {
+    left: 50%;
+  }
+}
+@media screen and (max-width: 375px){
+ 
+  .slider label {
+    height: 5px;
+    width: 5px;
+    bottom: 2.5%;
+  }
+}
+body{
+  background-image: linear-gradient(0deg, rgba(102,36,0,1) 0%, rgba(179,63,0,1) 57%, rgba(255,107,26,1) 100%);
+}
+#card {
+  display: flex;
+  flex-direction: column;
+  font-family: 'oswald', sans-serif;
+  position: relative;
+  height: 200vh;
+  margin-top: 50vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+.cardapio-nav1{
+  position: relative;
+  display: flex;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cardapio-nav2{
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cardapio-nav3{
+  position: relative;
+  display: flex;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cardapio-img{
+  display: flex;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top;
+}
+.button {
+  font-family: 'Oswald', sans-serif;
+  background-color: #f41e1e00;
+  border: 5px;
+  border-style: solid;
+  color: #B33F00;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 1vw;
+  top: 25vh;
+  z-index: 10;
+  transition: all 0.5s ease-out;
+}
+.button span{
+  font-size: 28px;
+}
+.button:hover{
+background-color: white;
+color: #B33F00;
+border: none;
+transition: all 0.5s ease-out;
+}
+.p1{
+  font-size: 38px;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  top: 17vh;
+  right: 9vh;
+  color: #ffffff;
+  align-items: center;
+  cursor: default;  
+}
+.p2{
+  font-size: 38px;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  top: 17vh;
+  right: 21vh;
+  color: #ffffff;
+  align-items: center;
+  cursor: default;
+}
+.p3{
+  font-size: 38px;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  top: 17vh;
+  right: 17vh;
+  color: #ffffff;
+  align-items: center;
+  cursor: default;
+
+}
+footer{
+  display: flex;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background-color: #111111;
+  justify-content: center;
+}
+.footer-nav{
+  height: 100%;
+  display: flex;
+  color: rgb(56, 54, 54);
+  cursor: default;
+}
+@media screen and (max-width: 850px){
+  #card{
+    margin-top: 30vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .cardapio-img{
+    height: 45vh;
+  }
+  .p1{
+    top: 14vh;
+    right: 9vh;
+  }
+  
+  .p2{
+    top: 14vh;
+    right: 21vh;
+  }
+  .p3{
+    top: 14vh;
+    right: 16vh;
+  }
+  
+}
+@media screen and (max-width: 700px){
+  #card{
+    margin-top: 30vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    height: 170vh;
+  }
+  
+  .button{
+    width: 30%;
+    align-items: center;  
+    top: 19vh;
+  }
+    .button span{
+      font-size: 14px;
+    }
+    .p1{
+      font-size: 28px;
+      top: 13vh;
+      right: 9vh;
+    }
+    
+    .p2{
+      font-size: 28px;
+      top: 13vh;
+      right: 18vh;
+    }
+    .p3{
+      font-size: 28px;
+      top: 13vh;
+      right: 15vh;
+    }
+
+  }
+  @media screen and (max-width: 600px){
+    .cardapio-img{
+      margin-top: 40px;
+    }
+    #card{
+      height: 100vh;
+      margin-top: 20vh;
+    }
+    .cardapio-nav1{
+      height: 30vh;
+    }
+    .cardapio-nav2{
+      height: 30vh;
+    }
+    .cardapio-nav3{
+      height: 30vh;
+    }
+    .p1{
+      font-size: 22px;
+      top: 13vh;
+      right: 20vh;
+    }
+    
+    .p2{
+      font-size: 22px;
+      top: 13vh;
+      right: 29vh;
+    }
+    .p3{
+      font-size: 22px;
+      top: 13vh;
+      right: 26vh;
+    }
+    .button{
+      height: 20px;
+      width: 35vw;
+    }
+  }
+  @media screen and (max-width: 455px){
+    .cardapio-img{
+      margin-top: 40px;
+    }
+    #card{
+      height: 100vh;
+      margin-top: 20vh;
+    }
+    .cardapio-nav1{
+      height: 30vh;
+    }
+    .cardapio-nav2{
+      height: 30vh;
+    }
+    .cardapio-nav3{
+      height: 30vh;
+    }
+    .p1{
+      font-size: 22px;
+      top: 13vh;
+      right: 11vh;
+    }
+    
+    .p2{
+      font-size: 22px;
+      top: 13vh;
+      right: 20vh;
+    }
+    .p3{
+      font-size: 22px;
+      top: 13vh;
+      right: 17vh;
+    }
+    .button{
+      height: 20px;
+      width: 35vw;
+    }
+  }
+@media screen and (max-width: 375px){
+  .cardapio-nav1{
+    height: 25vh;
+  }
+  .cardapio-nav2{
+    height: 25vh;
+  }
+  .cardapio-nav3{
+    height: 25vh;
+  }
+  .cardapio-img{
+    height: 100%;
+  }
+  #main{
+    height: 30vh;
+  }
+  .button span{
+    font-size: 14px;
+  }
+  .p1{
+    font-size: 16px;
+    top: 9vh;
+    right: 16vh;
+  }
+  
+  .p2{
+    font-size: 16px;
+    top: 9vh;
+    right: 22vh;
+  }
+  .p3{
+    font-size: 16px;
+    top: 9vh;
+    right: 19vh;
+  }
+  .button{
+    top: 14vh;
+    width: 40vw;
+  }
+  #card{
+    height: 85vh;
+  }
+}
+
+#main-sobre{
+  width: 100%;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+  background-color: #B33F00;
+  padding-top: 100px;
+}
+.div-principal{
+  position: relative;
+}
+.div-principal img{
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.titulo{
+  font-size: 50px;
+  z-index: 10;
+  cursor: default;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  right: 15%;
+  bottom: 45%;
+  
+}
+.div-sobre{
+  display: flex;
+  font-size: 20px;
+  padding: 5vh;
+  background-color: #111111;
+  
+}
+.nav-sobre{
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+
+}
+.img-sobre{
+  overflow: hidden;
+  float: left;
+  object-fit: cover;
+  height: 100vh;
+}
+.img-sobre img{
+  height: 100%;
+}
+.div-sobre2{
+  overflow: hidden;
+  justify-content: center;  
+  align-items: center;
+  position: relative;
+}
+.div-sobre3{
+  overflow: hidden;
+  justify-content: center;  
+  align-items: center;
+  position: relative;
+}
+
+.div-ul{
+  flex-direction: column;
+  list-style: disc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: stretch;
+  padding-left: 44%;
+  padding-right: 30%;
+}
+.h2-etico{
+  overflow: hidden;
+  justify-content: center;  
+  align-items: center;
+  position: relative;
+  display: flex;
+  padding-top: 20vh;
+  text-align: justify;
+}
+.p1-etico{
+  align-items: center;
+  padding: 0px 20%;
+  text-align: justify;
+}
+@media screen and (max-width: 1050px){
+  .titulo{
+    font-size: 35px;
+    left: 25%;
+    right: 15%;
+  }
+  
+  
+}
+@media screen and (max-width: 850px){
+  .titulo{
+    font-size: 35px;
+    left: 20%;
+    right: 15%;
+  }
+  .div-ul{
+    padding-left: 30%;
+    padding-right: 15%;
+  }
+  
+}
+@media screen and (max-width: 750px){
+  .titulo{
+    font-size: 25px;
+    left: 20%;
+    right: 15%;
+  }
+  
+  .img-sobre{
+    width: 50%;
+  }
+  .h2-etico{
+    padding-top: 2vh;
+  }
+}
+@media screen and (max-width: 550px){
+  .titulo{
+    font-size: 25px;
+    left: 15%;
+    right: 10%;
+  }
+  
+  
+  .img-sobre{
+    width: 40%;
+    height: 80vh;
+  }
+  .h2-etico{
+    padding-top: 5vh;
+  }
+}
+  @media screen and (max-width: 450px){
+    .titulo{
+      font-size: 15px;
+      left: 25%;
+      right: 19%;
+    }
+    .img-sobre{
+      width: 35%;
+      height: 20vh;
+    }
+
+    .div-sobre{
+      font-size: 12px;
+      text-align: justify;
+    }
+    .nav-sobre{
+      font-size: 12px;
+      align-items: stretch;
+    }
+    .img-sobre{
+      height: 60vh;
+      width: 50vw;
+    }
+    .h2-etico{
+      padding-top: 2vh;
+    }
+}
+@media screen and (max-width: 375px){
+  .titulo{
+    font-size: 15px;
+    left: 20%;
+    right: 10%;
+  }
+  
+  .div-sobre{
+    font-size: 10px;
+    text-align: justify;
+  }
+  .nav-sobre{
+    font-size: 10px;
+    align-items: stretch;
+  }
+  .img-sobre{
+    height: 60vh;
+    width: 50vw;
+  }
+  .h2-etico{
+    padding-top: 2vh;
+  }
+}
+
+/*cadastro usuario*/
+#section-cad{
+  position: relative;
+  height: 100vh;
+  margin-top: 150px;
+}
+#div-control-cad{
+  display: flex;
+  height: 100%;
+}
+.img-cadastro {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 35%;
+}
+.img-cadastro img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.login-cad {
+  position: relative;
+  margin:0px auto;
+  width: 40%;
+  height: 100%;
+  color: white;
+  font-family: 'oswald', sans-serif;
+  overflow: hidden;
+}
+.h1-login{
+  text-align: center;
+  cursor: default;
+  margin-top: 50px;
+}
+#form-cad{
+  margin: auto;
+  width: 400px;
+  
+}
+.input-cad{
+  height: 55px;
+  width: 400px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 30px;
+  border: 0px solid #111111;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+.label-cd{
+  position: relative;
+  font-size: larger;
+}
+.label-cd:hover{
+  background-color: transparent;
+}
+#btnCadastrar{
+  cursor: pointer;
+  height: 55px;
+  width: 400px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 30px;
+  border: 0px solid #111111;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+#a-login{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: large;
+}
+#a-login:hover{
+  text-decoration: underline ;
+  transition: all 0.5s ease-in;
+}
+@media screen and (max-width: 950px){
+  #section-cad{
+    margin-top: 100px;
+  }
+  .img-cadastro {
+    position: relative;
+    overflow: hidden;
+    width: 45%;
+  }
+  .login-cad{
+    width: 50%;
+  }
+
+  .h1-login{
+    text-align: center;
+    cursor: default;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  #form-cad{
+    margin: auto;
+    width: 200px;
+  }
+  .input-cad{
+    height: 50px;
+    width: 200px;
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+  .label-cd{
+    position: relative;
+    font-size: medium;
+  }
+  #btnCadastrar{
+    cursor: pointer;
+    height: 50px;
+    width: 200px;
+    font-size: medium;
+    padding: 0px;
+  }
+  #a-login{
+    font-size: medium;
+  }
+}
+@media screen and (max-width: 450px){
+  
+  .img-cadastro {
+    position: relative;
+    width: 45%;
+  }
+  .img-cadastro img{
+    height: 100%;
+  }
+  .h1-login{
+    text-align: center;
+    cursor: default;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: medium;
+  }
+  #form-cad{
+    margin: auto;
+    width: 100px;
+  }
+  .input-cad{
+    height: 20px;
+    width: 100px;
+    font-size: 10px;
+    padding: 10px 5px;
+  }
+  .label-cd{
+    position: relative;
+    font-size: smaller;
+  }
+  #btnCadastrar{
+    cursor: pointer;
+    height: 20px;
+    width: 100px;
+    font-size: smaller;
+    padding: 0px;
+  }
+  #a-login{
+    font-size: small;
+  }
+}
+@media screen and (max-width: 375px){
+ 
+  .img-cadastro {
+    position: relative;
+    overflow: hidden;
+    width: 45%;
+  }
+  .h1-login{
+    text-align: center;
+    cursor: default;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: medium;
+  }
+  #form-cad{
+    margin: auto;
+    width: 100px;
+  }
+  .input-cad{
+    height: 20px;
+    width: 100px;
+    font-size: 10px;
+    padding: 10px 5px;
+  }
+  .label-cd{
+    position: relative;
+    font-size: smaller;
+  }
+  #btnCadastrar{
+    cursor: pointer;
+    height: 20px;
+    width: 100px;
+    font-size: smaller;
+    padding: 0px;
+  }
+  #a-login{
+    font-size: small;
+  }    
+}
+/*cadastro usuario*/
+
+
+
+/*lista*/
+#section-list{
+  height: 100vh;
+  position: relative;
+  margin-top: 150px;
+}
+#nav-list{
+  position: relative;
+  height: 100px;
+  color: white;
+  font-family: 'oswald', sans-serif;
+  overflow: hidden;
+}
+#div-control-list{
+  display: flex;
+}
+#tr-table-list{
+  background-color: #ffffff;
+  font-family: 'oswald', sans-serif;
+}
+#tr-thead-list{
+  color: #B33F00;
+}
+.th-list-func th{
+  height: 100px;
+  width: 230px;
+}
+.icon-lista a{
+  font-size: 25px;
+  margin: 5px;
+  cursor: pointer;
+}
+.editar:hover{
+  color: rgb(59, 68, 196);
+  text-align: center;
+  border-radius: 10px;
+}
+.excluir:hover{
+  color: rgb(221, 74, 48);
+  text-align: center;
+  border-radius: 10px;
+  
+}
+@media screen and (max-width: 950px){
+  #section-list{
+    margin-top: 100px;
+  }
+}
+/*lista*/
+
+.list-f-ul{
+  display: inline;
+  float: right;
+}
+#span-cad-list{
+  color: #ffffff;
+}
+#div-cad-list{
+  height: 100%;
+  position: relative;
+  margin: 36px;
+}
+#div-cad-list a{
+  text-decoration: solid;
+}
+.botton-span-list{
+  background-color: white;
+  border: none;
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  height: 40px;
+  width: 60px;
+  border-radius: 10px;
+  color:#B33F00;
+  cursor: pointer;
+}
+.form-control{
+  height: 55px;
+  width: 400px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 30px;
+  border: 0px solid #111111;
+  font-size: 16px;
+  padding: 10px 20px; 
+}
+
+
+.th-list-func td{
+  height: 100px;
+  width: 200px;
+  text-align: center;
+}
+.td-list-func a{
+  height: 100px;
+  width: 200px;
+  text-align: center;
+}
+
+/*cadastro funcionarios*/
+#div-control{
+  margin-top: 150px;
+  color: #ffffff;
+  font-family: 'oswald', sans-serif;
+}
+.h1-login-func{
+  text-align: center;
+  cursor: default;
+  margin-bottom: 50px;
+  margin-top: 160px;
+  font-size: 2em;
+}
+#login-func {
+  position: relative;
+  border-radius: 10px;
+  height: 130vh;
+  color: white;
+  font-family: 'oswald', sans-serif;
+  overflow: hidden;
+}
+#btnCadastrar-func{
+  margin-top: 50px;
+  cursor: pointer;
+  height: 55px;
+  width: 400px;
+  display: block;
+  border-radius: 30px;
+  border: 0px solid #111111;
+  font-size: 16px;
+  font-family: 'oswald', sans-serif;
+  padding: 10px 20px;
+}
+.label-cd-func{
+  position: relative;
+  margin: auto;
+  font-size: larger;
+}
+.label-cd-func:hover{
+  background-color: transparent;
+}
+.cadastro-func{
+  margin: 0px auto;
+}
+.cadastro-func2{
+  margin: 0px auto;
+}
+#form-func{
+  position: relative;
+  display: flex;
+  margin: auto;
+}
+.input-func{
+  height: 55px;
+  width: 400px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 30px;
+  border: 0px solid #111111;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+@media screen and (max-width: 950px){
+  .input-func{
+    height: 50px;
+    width: 200px;
+  }
+  .form-control{
+    height: 50px;
+    width: 200px;
+
+  }
+  #btnCadastrar-func{
+    height: 50px;
+    width: 200px;
+    font-size: 17px;
+    padding: 0px;
+    
+  }
+  .cadastro-func{
+    font-size: 16px;
+  }
+  .cadastro-func2{
+   font-size: 16px;
+  }
+}
+@media screen and (max-width: 450px){
+  #login-func{
+    height: 70vh;
+    
+  }
+  .h1-login-func{
+    font-size: 1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .input-func{
+    height: 10px;
+    width: 100px;
+  }
+  .form-control{
+    height: 10px;
+    width: 100px;
+
+  }
+  #btnCadastrar-func{
+    height: 20px;
+    width: 100px;
+    font-size: 13px;
+    margin: 43px auto;
+    padding: 0px;
+  }
+  .cadastro-func{
+    font-size: 12px;
+  }
+  .cadastro-func2{
+   font-size: 12px;
+  }
+}
+@media screen and (max-width: 375px){
+  #login-func{
+    height: 70vh;
+    
+  }
+  .h1-login-func{
+    font-size: 1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .input-func{
+    height: 10px;
+    width: 100px;
+  }
+  .form-control{
+    height: 10px;
+    width: 100px;
+
+  }
+  #btnCadastrar-func{
+    height: 20px;
+    width: 100px;
+    font-size: 10px;
+    margin: 43px auto;
+    padding: 0px;
+    
+  }
+  .cadastro-func{
+    font-size: 10px;
+  }
+  .cadastro-func2{
+   font-size: 10px;
+  }
+}
+/*cadastro funcionarios*/
